@@ -9,11 +9,11 @@ from boto3.dynamodb.conditions import Key
 # Configuration — update REGION if your table is elsewhere
 # -------------------------------------------------------
 REGION = "us-east-1"
-TABLE_NAME = "Movies"
+TABLE_NAME = "Video_Games"
 
 
 def get_table():
-    """Return a reference to the DynamoDB Movies table."""
+    """Return a reference to the DynamoDB Games table."""
     dynamodb = boto3.resource("dynamodb", region_name=REGION)
     return dynamodb.Table(TABLE_NAME)
 
@@ -54,7 +54,7 @@ def print_all_games():
 
 def main():
     print("===== Reading from DynamoDB =====\n")
-    print_games()
+    print_all_games()
 
 
 if __name__ == "__main__":
